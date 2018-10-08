@@ -59,6 +59,22 @@ bool search(char *str, int len){
     return curr->end;
 }
 
+string temp;
+void print(node *curr){
+    
+    for(int i = 0; i<26; i++){
+        if(curr->next[i] != NULL){
+            temp.push_back(i+'a');
+            if(curr->next[i]->end == 1)
+                cout<<temp<<endl;
+            rev(curr->next[i]);
+            temp.pop_back();
+        }
+        
+    }
+}
+
+
 
 
 void del(node *curr){
